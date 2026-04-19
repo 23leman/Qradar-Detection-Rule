@@ -1,0 +1,29 @@
+name: Deploy Rules to QRadar
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'rules/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Deploy rules to QRadar
+        env:
+          QRADAR_HOST: ${{ secrets.QRADAR_HOST }}
+          QRADAR_TOKEN: ${{ secrets.QRADAR_TOKEN }}
+        run: python scripts/deploy_rules.py
