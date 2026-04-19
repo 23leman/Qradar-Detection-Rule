@@ -1,0 +1,9 @@
+{
+  "name": "User Account Deleted",
+  "note": "Detects deletion of a user account - T1531",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "User Account Deleted"}],
+  "groups": ["Impact"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4726"}]
+}
