@@ -1,0 +1,9 @@
+{
+  "name": "Brute Force Login Attempt",
+  "note": "Detects multiple failed login attempts - T1110",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "Brute Force Login Attempt"}],
+  "groups": ["Authentication"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4625"}]
+}
