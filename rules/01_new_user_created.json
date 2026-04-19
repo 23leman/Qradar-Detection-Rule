@@ -1,0 +1,35 @@
+{
+  "name": "New User Account Created",
+  "description": "Detects creation of a new local or domain user account. Could indicate unauthorized access or persistence attempt.",
+  "severity": "HIGH",
+  "event_id": "4720",
+  "log_source_type": "Microsoft Windows Security Event Log",
+  "conditions": {
+    "and": [
+      {
+        "field": "EventID",
+        "operator": "equals",
+        "value": "4720"
+      },
+      {
+        "field": "CategoryDefinition",
+        "operator": "equals",
+        "value": "User Account Management"
+      }
+    ]
+  },
+  "response": {
+    "create_offense": true,
+    "offense_name": "New User Account Created",
+    "offense_type": "Username",
+    "severity": 7,
+    "credibility": 8,
+    "relevance": 9
+  },
+  "mitre_attack": {
+    "tactic": "Persistence",
+    "technique": "T1136.001",
+    "technique_name": "Create Account: Local Account"
+  },
+  "enabled": true
+}
