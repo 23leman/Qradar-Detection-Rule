@@ -1,0 +1,10 @@
+{
+  "name": "RDP Remote Login Detected",
+  "note": "Detects remote desktop login - T1021.001",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "RDP Remote Login Detected"}],
+  "groups": ["Lateral Movement"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4624"},
+            {"uid": 2, "name": "LogonType", "operator": "EQUALS", "value": "10"}]
+}
