@@ -1,0 +1,9 @@
+{
+  "name": "Scheduled Task Created",
+  "note": "Detects new scheduled task creation - T1053.005",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "Scheduled Task Created"}],
+  "groups": ["Persistence"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4698"}]
+}
