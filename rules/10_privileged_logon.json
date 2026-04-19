@@ -1,0 +1,9 @@
+{
+  "name": "Privileged User Logon",
+  "note": "Detects privileged user logon with special privileges - T1078.002",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "Privileged User Logon"}],
+  "groups": ["Privilege Escalation"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4672"}]
+}
