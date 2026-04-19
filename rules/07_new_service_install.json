@@ -1,0 +1,9 @@
+{
+  "name": "New Service Installed",
+  "note": "Detects installation of a new Windows service - T1543.003",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "New Service Installed"}],
+  "groups": ["Persistence"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4697"}]
+}
