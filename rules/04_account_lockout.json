@@ -1,0 +1,9 @@
+{
+  "name": "User Account Locked Out",
+  "note": "Detects account lockout - T1110.001",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "User Account Locked Out"}],
+  "groups": ["Authentication"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4740"}]
+}
