@@ -1,0 +1,10 @@
+{
+  "name": "Suspicious PowerShell Execution",
+  "note": "Detects PowerShell process creation via Sysmon - T1059.001",
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "Suspicious PowerShell Execution"}],
+  "groups": ["Execution"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "1"},
+            {"uid": 2, "name": "ImagePath", "operator": "CONTAINS", "value": "powershell.exe"}]
+}
