@@ -1,0 +1,13 @@
+{
+  "name": "New User Account Created",
+  "note": "Detects creation of a new user account - T1136.001",
+  "base_host_id_type": "ADE",
+  "origin": "SYSTEM",
+  "base_capacity": 0,
+  "average_capacity": 0,
+  "type": "EVENT",
+  "enabled": true,
+  "responses": [{"type": "OFFENSE", "descriptor": "New User Account Created"}],
+  "groups": ["Authentication"],
+  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4720"}]
+}
