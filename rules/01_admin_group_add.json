@@ -1,6 +1,6 @@
 {
-  "name": "SOC: User Added to Privileged Group (Administrators)",
-  "description": "Windows sistemlərində bir istifadəçinin 'Administrators' qrupuna əlavə edilməsini (Event ID 4732) aşkarlayır. Bu, sistemə sızmış hücumçunun səlahiyyətlərini artırmaq (Privilege Escalation) cəhdidir.",
+  "name": "SOC-Project: User Added to Privileged Group (Administrators)",
+  "description": "Windows sistemində (Event ID 4732) bir istifadəçinin 'Administrators' qrupuna əlavə edilməsini aşkarlayır. Bu, Privilege Escalation (Səlahiyyət Artırma) hücumunun göstəricisidir.",
   "type": "EVENTS",
   "enabled": true,
   "responses": {
@@ -10,7 +10,7 @@
   "tests": [
     {
       "type": "AQL",
-      "text": "when the event matches AQL query 'LOGSOURCETYPENAME(devicetype)=\"Microsoft Windows Security Event Log\" AND \"EventID\"=\"4732\" AND \"TargetUserName\"=\"Administrators\"'"
+      "text": "when the event matches AQL query 'LOGSOURCETYPENAME(devicetype) = \"Microsoft Windows Security Event Log\" AND \"EventID\" = \"4732\" AND \"TargetUserName\" = \"Administrators\"'"
     }
   ]
 }
