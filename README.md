@@ -1,0 +1,1 @@
+# Qradar-Detection-Rule
