@@ -4,6 +4,6 @@
   "type": "EVENT",
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "New Service Installed"}],
-  "groups": ["Persistence"],
+  "groups": ["System"],
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4697"}]
 }
