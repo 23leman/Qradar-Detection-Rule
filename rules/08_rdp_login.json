@@ -6,5 +6,5 @@
   "responses": [{"type": "OFFENSE", "descriptor": "RDP Remote Login Detected"}],
   "groups": ["Lateral Movement"],
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4624"},
-            {"uid": 2, "name": "LogonType", "operator": "EQUALS", "value": "10"}]
+            {"uid": 2, "name": "Payload", "operator": "CONTAINS", "value": "Logon Type: 10"}]
 }
