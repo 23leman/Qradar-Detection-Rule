@@ -5,5 +5,6 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "New Service Installed"}],
   "groups": ["System"],
+  "aql_filter": "SELECT * FROM events WHERE QIDNAME(qid) ILIKE '%service installed%' OR EventID = '4697'",
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4697"}]
 }
