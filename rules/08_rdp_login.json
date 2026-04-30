@@ -5,6 +5,9 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "RDP Remote Login Detected"}],
   "groups": ["Lateral Movement"],
-  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4624"},
-            {"uid": 2, "name": "Payload", "operator": "CONTAINS", "value": "Logon Type: 10"}]
+  "aql_filter": "SELECT * FROM events WHERE EventID = '4624' AND payload ILIKE '%Logon Type: 10%'",
+  "tests": [
+    {"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4624"},
+    {"uid": 2, "name": "Payload", "operator": "CONTAINS", "value": "Logon Type: 10"}
+  ]
 }
