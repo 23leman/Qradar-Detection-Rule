@@ -5,6 +5,9 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "Suspicious PowerShell Execution"}],
   "groups": ["Execution"],
-  "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "1"},
-            {"uid": 2, "name": "Payload", "operator": "CONTAINS", "value": "powershell.exe"}]
+  "aql_filter": "SELECT * FROM events WHERE EventID = '1' AND payload ILIKE '%powershell.exe%'",
+  "tests": [
+    {"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "1"},
+    {"uid": 2, "name": "Payload", "operator": "CONTAINS", "value": "powershell.exe"}
+  ]
 }
