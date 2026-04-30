@@ -9,5 +9,6 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "New User Account Created"}],
   "groups": ["Authentication"],
+  "aql_filter": "SELECT * FROM events WHERE QIDNAME(qid) ILIKE '%user account%created%' OR EventID = '4720'",
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4720"}]
 }
