@@ -5,5 +5,6 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "User Account Locked Out"}],
   "groups": ["Authentication"],
+  "aql_filter": "SELECT * FROM events WHERE QIDNAME(qid) ILIKE '%account locked out%' OR EventID = '4740'",
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4740"}]
 }
