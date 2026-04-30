@@ -5,5 +5,6 @@
   "enabled": true,
   "responses": [{"type": "OFFENSE", "descriptor": "Privileged User Logon"}],
   "groups": ["Privilege Escalation"],
+  "aql_filter": "SELECT * FROM events WHERE QIDNAME(qid) ILIKE '%special privileges%' OR EventID = '4672'",
   "tests": [{"uid": 1, "name": "EventID", "operator": "EQUALS", "value": "4672"}]
 }
